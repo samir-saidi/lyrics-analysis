@@ -61,6 +61,21 @@ This project analyzes the lexical complexity of lyrics from 20 popular artists (
    1/3 readability metrics differ:
    - **Coleman Liau**: pop > alt (p=0.0352)
 
+## Conclusions
+While some clear differences emerge, the picture is more complex than a simple dichotomy between the genres.
+
+For RQ1, the findings show a mixed pattern. Pop lyrics demonstrate higher lexical diversity, measured by the Type-Token Ratio, suggesting they employ a wider range of vocabulary within individual songs. This challenges the common perception that pop music relies on repetitive or simple language structures. The Coleman-Liau index also shows pop lyrics as slightly more complex, though this effect is modest. 
+
+However, when examining readability through established formulas like Flesch-Kincaid and Gunning Fog, no significant differences appear between the genres. This suggests that while pop lyrics may use more varied vocabulary, their overall syntactic structure and sentence complexity do not differ substantially from alternative lyrics.
+
+The relationships between different complexity metrics reveal an interesting pattern: vocabulary diversity shows a moderate negative correlation with syntactic complexity measures. In practical terms, songs with more varied word choices tend to have simpler sentence structures, and vice versa. This pattern holds across both genres, suggesting it may reflect a general characteristic of songwriting rather than a genre-specific feature.
+
+The strongest correlation in the analysis between Flesch-Kincaid and Gunning Fog scores indicates these two readability formulas are measuring essentially the same underlying dimension of text complexity. This can provide confidence in the reliability of these metrics for lyrical analysis, despite their original design for prose.
+
+These findings complicate straightforward narratives about genre differences in lyrical sophistication. They suggest that what distinguishes pop from alternative lyrics may be more about vocabulary choice and lexical richness than about overall text complexity or readability. The absence of strong differences in most readability metrics points to shared conventions in songwriting that transcend genre boundaries, particularly regarding sentence structure and grammatical complexity.
+
+The study also highlights methodological considerations for future research. The moderate effect sizes and mixed significance across metrics underscore the value of examining multiple dimensions of complexity rather than relying on single measures. The consistency of certain patterns across genres, like the inverse relationship between vocabulary diversity and syntactic complexity, suggests fruitful avenues for investigating universal characteristics of songwriting across musical styles.
+
 ## Installation & Usage
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
