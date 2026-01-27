@@ -15,18 +15,33 @@ sys.path.append(PROJECT_ROOT)
 # Configuration settings below:
 
 # List of artists to analyze
-# TODO: Expand this list
 ARTISTS = [
+    # Some of the most famous pop artists
+    "Michael Jackson",
+    "Taylor Swift",
+    "The Beatles",
+    "Prince",
+    "Beyoncé",
+    "Madonna",
+    "Britney Spears",
+    "Adele",
+    "Whitney Houston",
+    "Elton John",
+    # Some of the most famous singer-songwriter artists
+    "Bob Dylan",
+    "Neil Young",
+    "Nick Cave & The Bad Seeds",
     "Joanna Newsom",
     "Joni Mitchell",
     "Sufjan Stevens",
     "Fiona Apple",
     "Kate Bush",
-    "Tori Amos"
+    "Tori Amos",
+    "Carole King"
 ]
 
 # Number of songs per artist to fetch
-SONGS_PER_ARTIST = 10
+SONGS_PER_ARTIST = 20
 
 # Data storage settings
 RAW_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw")
@@ -263,62 +278,5 @@ def collect_all_artists():
     
     return all_songs
 
-def test_with_one_artist():
-    """Test function: collect data for just one artist"""
-    print("Running test with one artist...")
-    
-    # Temporarily modify config for testing
-    test_artists = ["Joanna Newsom"]
-    test_songs_per = 3
-    
-    # Create necessary directories
-    os.makedirs(os.path.join(RAW_DATA_PATH, "lyrics"), exist_ok=True)
-    os.makedirs(os.path.join(RAW_DATA_PATH, "metadata"), exist_ok=True)
-    os.makedirs(PROCESSED_DATA_PATH, exist_ok=True)
-    
-    collector = LyricsCollector()
-    
-    print(f"Testing with: {test_artists[0]} ({test_songs_per} songs)")
-    songs = collector.collect_artist(test_artists[0], test_songs_per)
-    
-    if songs:
-        # Save test results
-        test_df = pd.DataFrame(songs)
-        test_path = os.path.join(PROCESSED_DATA_PATH, "test_collection.csv")
-        test_df.to_csv(test_path, index=False, encoding='utf-8')
-        
-        print(f"\nTest successful!")
-        print(f"Songs collected: {len(songs)}")
-        print(f"Data saved to: {test_path}")
-        
-        # Show sample
-        print("\nSample data:")
-        print(test_df[["artist", "title", "lyrics_length"]].head())
-        
-        # Check the data folder
-        print(f"\nCheck your data folder:")
-        print(f"Raw lyrics: {RAW_DATA_PATH}/lyrics/")
-        print(f"Metadata: {RAW_DATA_PATH}/metadata/")
-    
-    return songs
-
 if __name__ == "__main__":
-        # Ask user what to do
-        print("Choose an option:")
-        print("1. Test with one artist (3 songs)")
-        print("2. Collect all artists (10 songs each)")
-        print("3. Custom collection")
-        
-        choice = input("\nEnter choice (1-3): ").strip()
-        
-        if choice == "1":
-            test_with_one_artist()
-        elif choice == "2":
-            collect_all_artists()
-        elif choice == "3":
-            # You could add custom logic here
-            print("Custom collection not implemented yet. Running test instead.")
-            test_with_one_artist()
-        else:
-            print("Invalid choice. Running test with one artist.")
-            test_with_one_artist()
+        collect_all_artists()

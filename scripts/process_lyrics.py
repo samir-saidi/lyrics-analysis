@@ -65,7 +65,7 @@ class LyricsProcessor:
         # Process
         processed_df = self.process_dataframe(df)
         
-        # Save minimal version
+        # Save output
         output_file = os.path.join(PROCESSED_PATH, "processed.csv")
         processed_df.to_csv(output_file, index=False)
         print(f"\nSaved processed data to: {output_file}")

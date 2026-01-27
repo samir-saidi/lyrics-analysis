@@ -1,0 +1,131 @@
+
+STATISTICAL ANALYSIS REPORT
+
+Analysis Date: 2026-01-27 05:23:03
+Total Songs Analyzed: 398
+Songs by Group:
+group
+pop    199
+alt    199
+
+RESEARCH QUESTIONS
+
+1. Do pop artists exhibit different lexical complexity than alternative artists?
+2. Which specific complexity metrics show the strongest differences?
+3. Are different types of complexity related within songs?
+4. Are there significant differences in readability between groups?
+
+METHODOLOGY
+
+Data Source: Genius.com API
+Artists Analyzed:
+  - Alternative: Bob Dylan, Neil Young, Nick Cave & The Bad Seeds, Joanna Newsom, Joni Mitchell, Sufjan Stevens, Fiona Apple, Kate Bush, Tori Amos, Carole King
+  - Pop: Michael Jackson, Taylor Swift, The Beatles, Prince, Beyoncé, Madonna, Britney Spears, Adele, Whitney Houston, Elton John
+
+Complexity Metrics Calculated:
+1. Flesch-Kincaid Grade Level
+2. Type-Token Ratio (Lexical Diversity)
+3. Gunning Fog Index
+4. Coleman-Liau Index
+5. Automated Readability Index
+6. Average Sentence Length
+
+Statistical Tests Applied:
+- Shapiro-Wilk test for normality
+- Levene's test for homogeneity of variance
+- Independent t-test or Mann-Whitney U test for group comparisons
+- Pearson and Spearman correlations
+- Effect sizes (Cohen's d or Rank-biserial correlation)
+
+RESULTS SUMMARY
+
+GROUP COMPARISON RESULTS:
+
+Flesch Kincaid Grade:
+  not significant (p = 0.8180)
+  Effect size (Rank-biserial r): -0.013
+  Direction: No significant difference
+  pop: 63.84 ± 56.55 (n=199)
+  alt: 59.63 ± 49.49 (n=199)
+
+Type Token Ratio:
+  significant (p = 0.0000)
+  Effect size (Rank-biserial r): 0.486
+  Direction: pop > alt
+  pop: 0.36 ± 0.09 (n=199)
+  alt: 0.45 ± 0.12 (n=199)
+
+Gunning Fog:
+  not significant (p = 0.8503)
+  Effect size (Rank-biserial r): -0.011
+  Direction: No significant difference
+  pop: 67.51 ± 58.05 (n=199)
+  alt: 63.31 ± 50.72 (n=199)
+
+Coleman Liau:
+  significant (p = 0.0352)
+  Effect size (Rank-biserial r): 0.122
+  Direction: pop > alt
+  pop: 5.91 ± 1.81 (n=199)
+  alt: 6.19 ± 1.69 (n=199)
+
+CORRELATION FINDINGS:
+
+flesch_kincaid_grade vs type_token_ratio:
+  Pearson r = -0.311 (p = 0.0000)
+  Spearman ρ = -0.183 (p = 0.0003)
+
+flesch_reading_ease vs flesch_kincaid_grade:
+  Pearson r = -0.999 (p = 0.0000)
+  Spearman ρ = -0.999 (p = 0.0000)
+
+type_token_ratio vs avg_sentence_length:
+  Pearson r = -0.307 (p = 0.0000)
+  Spearman ρ = -0.183 (p = 0.0002)
+
+gunning_fog vs coleman_liau:
+  Pearson r = 0.156 (p = 0.0019)
+  Spearman ρ = 0.186 (p = 0.0002)
+
+
+INTERPRETATION OF RESEARCH QUESTIONS
+
+1. Do pop artists exhibit different lexical complexity than alternative artists?
+   2/4 metrics show significant differences:
+   - Type Token Ratio: pop > alt (p=0.0000)
+   - Coleman Liau: pop > alt (p=0.0352)
+
+2. Which specific complexity metrics show the strongest differences?
+   Ranked by effect size (strongest first):
+   - Type Token Ratio: Rank-biserial r = 0.49 (medium effect)
+   - Coleman Liau: Rank-biserial r = 0.12 (small effect)
+   - Flesch Kincaid Grade: Rank-biserial r = -0.01 (small effect)
+   - Gunning Fog: Rank-biserial r = -0.01 (small effect)
+
+3. Are different types of complexity related within songs?
+   Key correlations between metrics:
+   - Flesch Kincaid Grade & Gunning Fog: r = 1.00 (strong positive correlation)
+   - Flesch Kincaid Grade & Type Token Ratio: r = -0.31 (moderate negative correlation)
+   - Type Token Ratio & Gunning Fog: r = -0.31 (moderate negative correlation)
+
+4. Are there significant differences in readability between groups?
+   1/3 readability metrics differ:
+   - Coleman Liau: pop > alt (p=0.0352)
+
+
+CONCLUSIONS
+
+Based on the analysis of 398 songs:
+
+Significant differences found:
+   - Type Token Ratio: pop > alt (medium effect)
+   - Coleman Liau: pop > alt (small effect)
+
+
+RECOMMENDATIONS FOR FURTHER RESEARCH
+
+1. Increase sample size for more statistical power
+2. Include more artists in each genre category
+3. Analyze trends over time within artists' careers
+4. Include additional linguistic features (syntactic complexity, semantic analysis)
+5. Compare with broader music genres for context
